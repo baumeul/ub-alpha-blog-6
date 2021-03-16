@@ -1,0 +1,23 @@
+<h1 id="articles_listing_page">ARTICLES LISTING PAGE</h1>
+
+<table>
+	<caption><h2>Articles</h2></caption>
+	<thead>
+		<tr>
+			<th scope="col">Title</th>
+			<th scope="col">Description</th>
+			<th scope="col">Created by</th>
+			<th scope="col">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @articles.each do |article| %>
+		<tr>
+			<td><%= article.title %></td>
+			<td><%= article.description %></td>
+			<td><%= article.created_by %></td>
+			<td>PLACEHOLDER</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
