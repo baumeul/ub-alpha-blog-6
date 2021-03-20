@@ -1,0 +1,37 @@
+<h1 id="edit_booking">EDIT BOOKING</h1>
+
+<% if @booking.errors.any?  %>
+	<h2>The following errors prevented the booking from beeing saved!</h2>
+	<ul>
+		<% @booking.errors.full_messages.each do |msg|  %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end  %>
+
+<%= form_with(model: @booking, local: true) do |f| %>
+
+	<p>
+		<%= f.label :guestname %><br>
+		<%= f.text_field :guestname %>
+	</p>
+	<p>
+		<%= f.label :checkin %><br>
+		<%= f.text_field :checkin %>
+	</p>
+	<p>
+		<%= f.label :checkout %><br>
+		<%= f.text_field :checkout %>
+	</p>
+	<p>
+		<%= f.label :price %><br>
+		<%= f.text_field :price %>
+	</p>
+	
+	<p>
+		<%= f.submit %>
+	</p>
+	
+<% end  %>
+
+<p><%= link_to "Return to bookings list", bookings_path %></p>

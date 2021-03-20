@@ -1,0 +1,26 @@
+<h1 id="bookings_listing_page">BOOKINGS LISTING PAGE</h1>
+
+<table>
+	<caption><h2>Bookings</h2></caption>
+	<thead>
+		<tr>
+			<th scope="col">Guest</th>
+			<th scope="col">Check-In-Date</th>
+			<th scope="col">Check-Out-Date</th>
+			<th scope="col">Price</th>
+			<th colspan="3" scope="col">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @bookings.each do |booking| %>
+		<tr>
+			<td><%= booking.guestname %></td>
+			<td><%= booking.checkin %></td>
+			<td><%= booking.checkout %></td>
+			<td><%= booking.price %> €</td>
+			<td><%= link_to "Show", booking_path(booking) %></td>
+			<td><%= link_to "Edit", edit_booking_path(booking) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
